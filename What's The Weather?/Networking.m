@@ -35,7 +35,7 @@
 #pragma - Requests
 
 - (void)getWeatherForURL:(NSString*)url
-                 success:(void (^)(NSArray *array, NSError *error))successCompletion
+                 success:(void (^)(NSDictionary *dict, NSError *error))successCompletion
                  failure:(void (^)(void))failureCompletion
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
@@ -47,19 +47,15 @@
                                      
                                      [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                                      
-                                     // handle response
-                                     NSLog(@"Data:%@",data);
-                                     NSLog(@"Response:%@",response);
-                                     NSLog(@"Error:%@",[error localizedDescription]);
-                                     
-                                     
                                      NSHTTPURLResponse *httpResp = (NSHTTPURLResponse*) response;
                                      if (httpResp.statusCode == 200) {
                                          NSError *jsonError;
                                          
-                                         NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
-                                         NSLog(@"DownloadeData:%@",array);
-                                         successCompletion(array,nil);
+                                         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
+                                         
+                                         NSLog(@"DownloadeData:%@",dict);
+                                         
+                                         successCompletion(dict,nil);
                                      } else {
                                          NSLog(@"Fail Not 200:");
                                          dispatch_async(dispatch_get_main_queue(), ^{

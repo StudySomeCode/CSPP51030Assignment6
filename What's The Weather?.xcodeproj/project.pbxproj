@@ -24,6 +24,7 @@
 		F346779118C25C72000EF1BB /* What_s_The_Weather_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = F346779018C25C72000EF1BB /* What_s_The_Weather_Tests.m */; };
 		F346779B18C25CC2000EF1BB /* Locations.plist in Resources */ = {isa = PBXBuildFile; fileRef = F346779A18C25CC2000EF1BB /* Locations.plist */; };
 		F346779E18C26337000EF1BB /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = F346779D18C26337000EF1BB /* Networking.m */; };
+		F34677A118C2765E000EF1BB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F34677A018C2765E000EF1BB /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		F346779C18C26337000EF1BB /* Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
 		F346779D18C26337000EF1BB /* Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Networking.m; sourceTree = "<group>"; };
 		F346779F18C265ED000EF1BB /* MasterDetailProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterDetailProtocol.h; sourceTree = "<group>"; };
+		F34677A018C2765E000EF1BB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F34677A118C2765E000EF1BB /* MapKit.framework in Frameworks */,
 				F346776518C25C71000EF1BB /* CoreGraphics.framework in Frameworks */,
 				F346776718C25C71000EF1BB /* UIKit.framework in Frameworks */,
 				F346776318C25C71000EF1BB /* Foundation.framework in Frameworks */,
@@ -110,6 +113,7 @@
 		F346776118C25C71000EF1BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F34677A018C2765E000EF1BB /* MapKit.framework */,
 				F346776218C25C71000EF1BB /* Foundation.framework */,
 				F346776418C25C71000EF1BB /* CoreGraphics.framework */,
 				F346776618C25C71000EF1BB /* UIKit.framework */,

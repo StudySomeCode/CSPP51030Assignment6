@@ -7,11 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+
 #import "MasterDetailProtocol.h"
+#import "Networking.h"
 
 @interface DetailViewController : UIViewController <UISplitViewControllerDelegate, MasterDetailProtocol>
 
 @property (strong, nonatomic) id detailItem;
+
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 

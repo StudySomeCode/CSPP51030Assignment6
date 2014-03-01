@@ -37,6 +37,30 @@
     // Update the user interface for the detail item.
     if (self.detailItem) {
         self.detailDescriptionLabel.text = self.detailItem;
+        
+        NSString *url = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather?q=%@&mode=json", self.detailItem];
+        url = [url stringByAddingPercentEscapesUsingEncoding:
+               NSASCIIStringEncoding];
+
+        [[Networking sharedNetworking] getWeatherForURL:url                                                       success:^(NSDictionary *dict, NSError *error){
+            
+            NSDictionary *coords = [dict objectForKey:@"coord"];
+            CLLocationCoordinate2D centerCoord;
+            centerCoord.latitude = [[coords objectForKey:@"lat"] doubleValue];
+            centerCoord.longitude = [[coords objectForKey:@"lon"] doubleValue];
+            
+            MKMapCamera *mapCam = [[MKMapCamera alloc] init];
+            mapCam.centerCoordinate = centerCoord;
+            mapCam.altitude = 25000;
+            
+            [self.mapView setCamera:mapCam animated:YES];
+            
+                                                    NSLog(@"success");
+                                                }
+                                                failure:^(void){
+                                                    //TODO UIAlertView
+                                                    NSLog(@"error");
+                                                }];
     }
 }
 

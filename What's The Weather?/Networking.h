@@ -12,5 +12,7 @@
 
 + (id)sharedNetworking;
 
-
+- (void)getWeatherForURL:(NSString*)url
+                 success:(void (^)(NSDictionary *dict, NSError *error))successCompletion
+                 failure:(void (^)(void))failureCompletion;
 @end
