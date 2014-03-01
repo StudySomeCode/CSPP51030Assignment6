@@ -19,6 +19,12 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pressureLabel;
+@property (weak, nonatomic) IBOutlet UILabel *windLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tempLabel;
+@property (weak, nonatomic) IBOutlet UILabel *highLabel;
+@property (weak, nonatomic) IBOutlet UILabel *lowLabel;
 
 - (void)pass:(NSString *)City;
 @end

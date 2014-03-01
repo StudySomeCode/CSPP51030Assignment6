@@ -53,9 +53,19 @@
             mapCam.centerCoordinate = centerCoord;
             mapCam.altitude = 25000;
             
-            [self.mapView setCamera:mapCam animated:YES];
             
-                                                    NSLog(@"success");
+            NSDictionary *main = [dict objectForKey:@"main"];
+            self.tempLabel.text = [NSString stringWithFormat:@"Temperature %@ K", [[main objectForKey:@"temp"] stringValue]];
+            self.highLabel.text = [NSString stringWithFormat:@"High Temperature %@ K", [[main objectForKey:@"temp_max"] stringValue]];
+            self.lowLabel.text =  [NSString stringWithFormat:@"Low Temperature %@ K", [[main objectForKey:@"temp_min"] stringValue]];
+            self.windLabel.text = [NSString stringWithFormat:@"Humidity %@ %%", [[main objectForKey:@"humidity"] stringValue]];
+            self.pressureLabel.text = [NSString stringWithFormat:@"Pressure %@ mb", [[main objectForKey:@"pressure"] stringValue]];
+            
+            NSArray *weather = [dict objectForKey:@"weather"];
+            NSDictionary *weatherDict = weather[0];
+            self.descriptionLabel.text = [NSString stringWithFormat:@"%@", [weatherDict objectForKey:@"description"]];
+            
+            [self.mapView setCamera:mapCam animated:YES];
                                                 }
                                                 failure:^(void){
                                                     //TODO UIAlertView
@@ -81,7 +91,7 @@
 
 - (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
 {
-    barButtonItem.title = NSLocalizedString(@"Master", @"Master");
+    barButtonItem.title = NSLocalizedString(@"Cities", @"Cities");
     [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
     self.masterPopoverController = popoverController;
 }
