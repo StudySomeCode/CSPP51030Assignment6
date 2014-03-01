@@ -22,6 +22,8 @@
 		F346778718C25C72000EF1BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F346776618C25C71000EF1BB /* UIKit.framework */; };
 		F346778F18C25C72000EF1BB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F346778D18C25C72000EF1BB /* InfoPlist.strings */; };
 		F346779118C25C72000EF1BB /* What_s_The_Weather_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = F346779018C25C72000EF1BB /* What_s_The_Weather_Tests.m */; };
+		F346779B18C25CC2000EF1BB /* Locations.plist in Resources */ = {isa = PBXBuildFile; fileRef = F346779A18C25CC2000EF1BB /* Locations.plist */; };
+		F346779E18C26337000EF1BB /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = F346779D18C26337000EF1BB /* Networking.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,10 @@
 		F346778C18C25C72000EF1BB /* What's The Weather?Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "What's The Weather?Tests-Info.plist"; sourceTree = "<group>"; };
 		F346778E18C25C72000EF1BB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F346779018C25C72000EF1BB /* What_s_The_Weather_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = What_s_The_Weather_Tests.m; sourceTree = "<group>"; };
+		F346779A18C25CC2000EF1BB /* Locations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Locations.plist; path = ../Locations.plist; sourceTree = "<group>"; };
+		F346779C18C26337000EF1BB /* Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
+		F346779D18C26337000EF1BB /* Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Networking.m; sourceTree = "<group>"; };
+		F346779F18C265ED000EF1BB /* MasterDetailProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterDetailProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,7 @@
 		F346776818C25C71000EF1BB /* What's The Weather? */ = {
 			isa = PBXGroup;
 			children = (
+				F346779A18C25CC2000EF1BB /* Locations.plist */,
 				F346777118C25C71000EF1BB /* AppDelegate.h */,
 				F346777218C25C71000EF1BB /* AppDelegate.m */,
 				F346777418C25C72000EF1BB /* Main.storyboard */,
@@ -122,6 +129,9 @@
 				F346777818C25C72000EF1BB /* MasterViewController.m */,
 				F346777A18C25C72000EF1BB /* DetailViewController.h */,
 				F346777B18C25C72000EF1BB /* DetailViewController.m */,
+				F346779C18C26337000EF1BB /* Networking.h */,
+				F346779D18C26337000EF1BB /* Networking.m */,
+				F346779F18C265ED000EF1BB /* MasterDetailProtocol.h */,
 				F346777D18C25C72000EF1BB /* Images.xcassets */,
 				F346776918C25C71000EF1BB /* Supporting Files */,
 			);
@@ -234,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F346777E18C25C72000EF1BB /* Images.xcassets in Resources */,
+				F346779B18C25CC2000EF1BB /* Locations.plist in Resources */,
 				F346776D18C25C71000EF1BB /* InfoPlist.strings in Resources */,
 				F346777618C25C72000EF1BB /* Main.storyboard in Resources */,
 			);
@@ -255,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F346777318C25C71000EF1BB /* AppDelegate.m in Sources */,
+				F346779E18C26337000EF1BB /* Networking.m in Sources */,
 				F346777918C25C72000EF1BB /* MasterViewController.m in Sources */,
 				F346776F18C25C71000EF1BB /* main.m in Sources */,
 				F346777C18C25C72000EF1BB /* DetailViewController.m in Sources */,

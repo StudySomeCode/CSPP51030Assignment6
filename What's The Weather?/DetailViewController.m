@@ -17,26 +17,26 @@
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(id)newDetailItem
+- (void)pass:(NSString *)City
 {
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
+    NSLog(@"City: %@",City);
+    if (_detailItem != City) {
+        _detailItem = City;
         
         // Update the view.
         [self configureView];
     }
-
+    
     if (self.masterPopoverController != nil) {
         [self.masterPopoverController dismissPopoverAnimated:YES];
-    }        
+    }
 }
 
 - (void)configureView
 {
     // Update the user interface for the detail item.
-
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+        self.detailDescriptionLabel.text = self.detailItem;
     }
 }
 

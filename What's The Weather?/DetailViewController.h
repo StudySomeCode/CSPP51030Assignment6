@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MasterDetailProtocol.h"
 
-@interface DetailViewController : UIViewController <UISplitViewControllerDelegate>
+@interface DetailViewController : UIViewController <UISplitViewControllerDelegate, MasterDetailProtocol>
 
 @property (strong, nonatomic) id detailItem;
 
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+
+- (void)pass:(NSString *)City;
 @end
