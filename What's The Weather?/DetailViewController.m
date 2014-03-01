@@ -68,8 +68,9 @@
             [self.mapView setCamera:mapCam animated:YES];
                                                 }
                                                 failure:^(void){
-                                                    //TODO UIAlertView
-                                                    NSLog(@"error");
+                                                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert!" message:@"No network available. Please retry with network connection" delegate:self cancelButtonTitle:@"ok" otherButtonTitles:nil];
+                                                    [alert show];
+
                                                 }];
     }
 }
